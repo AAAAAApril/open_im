@@ -1,0 +1,45 @@
+group 'io.openim.flutter_openim_sdk'
+version '1.0'
+
+buildscript {
+    repositories {
+        maven {
+            url 'https://open-im-online.rentsoft.cn:51000/repository/maven2/'
+            allowInsecureProtocol = true
+        }
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.4'
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        maven {
+            url 'https://open-im-online.rentsoft.cn:51000/repository/maven2/'
+            allowInsecureProtocol = true
+        }
+        google()
+        mavenCentral()
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 30
+
+    defaultConfig {
+        minSdkVersion 21
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+dependencies {
+    implementation 'io.openim:core-sdk:2.3.4@aar'
+}
